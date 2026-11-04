@@ -16,7 +16,7 @@ def load_config() -> dict:
 
 
 def env(name: str, default: str | None = None, required: bool = False) -> str | None:
-    val = os.environ.get(name, default)
+    val = os.environ.get(name) or default  # пустая переменная GitHub = не задана
     if required and not val:
         raise SystemExit(f"Не задан секрет {name}. Добавь его в Settings → Secrets → Actions.")
     return val
