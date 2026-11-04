@@ -3,5 +3,11 @@
  "account_history": [],
  "telegram_history": [],
  "tg_update_offset": 0,
- "errors": []
+ "errors": [
+  {
+   "at": "2026-11-04T16:07:50+00:00",
+   "msg": "generate: Все модели недоступны: None"
+  }
+ ],
+ "updated_at": "2026-11-04T16:07:50+00:00"
 }
