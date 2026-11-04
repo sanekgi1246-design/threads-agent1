@@ -1,0 +1,19 @@
+name: Продление токена Threads
+
+on:
+  schedule:
+    - cron: "5 3 1,15 * *"   # 1-го и 15-го числа (токен живёт 60 дней)
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: python refresh_token.py

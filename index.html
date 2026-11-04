@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Threads-агент · дашборд</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f4f4f2; --surface-1: #fcfcfb; --border: #e3e2de;
+    --text-primary: #0b0b0b; --text-secondary: #52514e; --text-muted: #7b7a75;
+    --grid: #ecebe7; --series-1: #2a78d6; --series-2: #eb6834; --series-3: #1baf7a;
+    --good: #008300; --critical: #e34948;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --bg: #111110; --surface-1: #1a1a19; --border: #2c2c2a;
+      --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e86;
+      --grid: #262624; --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70;
+      --good: #3fae3f; --critical: #e66767;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text-primary);
+         font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 24px 16px 48px; }
+  header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+  h1 { font-size: 20px; margin: 0; }
+  h2 { font-size: 14px; margin: 0 0 12px; color: var(--text-secondary); font-weight: 600; }
+  .muted { color: var(--text-muted); font-size: 12px; }
+  .filters { display: flex; gap: 6px; margin: 16px 0; }
+  .filters button { border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary);
+         padding: 6px 12px; border-radius: 8px; cursor: pointer; font: inherit; }
+  .filters button.on { color: var(--text-primary); border-color: var(--text-secondary); font-weight: 600; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+  .kpi .v { font-size: 28px; font-weight: 650; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .kpi .l { color: var(--text-secondary); font-size: 13px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  @media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+  .full { margin-top: 12px; }
+  .chart { position: relative; height: 240px; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  th { color: var(--text-muted); font-weight: 500; font-size: 12px; }
+  td.n, th.n { text-align: right; }
+  td a { color: var(--series-1); text-decoration: none; }
+  .postt { max-width: 420px; color: var(--text-secondary); }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--border);
+         font-size: 12px; color: var(--text-secondary); white-space: nowrap; }
+  .err { color: var(--critical); }
+  .legend { float: right; font-weight: 400; color: var(--text-secondary); font-size: 12px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin: 0 5px 0 12px; vertical-align: -1px; }
+  .empty { color: var(--text-muted); padding: 24px 0; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Threads-агент · крипта</h1>
+    <span class="muted" id="updated">загрузка…</span>
+  </header>
+
+  <div class="filters" id="range">
+    <button data-d="7">7 дней</button><button data-d="30" class="on">30 дней</button><button data-d="0">Всё время</button>
+  </div>
+
+  <section class="kpis">
+    <div class="card kpi"><div class="l">Подписчики Threads</div><div class="v" id="k-followers">—</div><div class="muted" id="k-followers-d"></div></div>
+    <div class="card kpi"><div class="l">Просмотры постов</div><div class="v" id="k-views">—</div><div class="muted" id="k-posts"></div></div>
+    <div class="card kpi"><div class="l">Вовлечённость</div><div class="v" id="k-er">—</div><div class="muted">(лайки+ответы+репосты) / просмотры</div></div>
+    <div class="card kpi"><div class="l">Пришли в Telegram из Threads</div><div class="v" id="k-tg">—</div><div class="muted" id="k-tg-total"></div></div>
+  </section>
+
+  <section class="grid2">
+    <div class="card"><h2>Подписчики Threads</h2><div class="chart"><canvas id="c-followers"></canvas></div></div>
+    <div class="card"><h2>Участники Telegram-канала</h2><div class="chart"><canvas id="c-tg"></canvas></div></div>
+  </section>
+
+  <section class="card full">
+    <h2>Просмотры по постам
+      <span class="legend"><i style="background:var(--series-1)"></i>обычный пост <i style="background:var(--series-2)"></i>со ссылкой в Telegram</span></h2>
+    <div class="chart"><canvas id="c-views"></canvas></div>
+  </section>
+
+  <section class="grid2">
+    <div class="card"><h2>Рубрики (агент сам смещается к лучшим)</h2><table id="t-rubrics"></table></div>
+    <div class="card"><h2>Лучшее время публикации (по Киеву)</h2><table id="t-hours"></table></div>
+  </section>
+
+  <section class="card full">
+    <h2>Посты</h2>
+    <table id="t-posts"></table>
+  </section>
+
+  <section class="card full" id="errors-card" hidden>
+    <h2>Последние ошибки</h2>
+    <table id="t-errors"></table>
+  </section>
+</div>
+
+<script>
+const TZ = "Europe/Kiev";
+const RUB = { market_pulse: "Пульс рынка", news_explained: "Новость", scam_alert: "Скам-алерт",
+              myth_buster: "Миф/правда", question: "Вопрос", basics: "Крипта за 30 сек" };
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = n => n == null ? "—" : Number(n).toLocaleString("ru-RU");
+const pct = x => x == null ? "—" : (x * 100).toFixed(1).replace(".", ",") + "%";
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const eng = i => (i.likes||0) + (i.replies||0) + (i.reposts||0) + (i.quotes||0) + (i.shares||0);
+let DATA = null, days = 30, charts = {};
+
+function inRange(iso) { return !days || (Date.now() - new Date(iso)) / 864e5 <= days; }
+
+function lineChart(id, labels, values, color) {
+  charts[id]?.destroy();
+  charts[id] = new Chart(document.getElementById(id), {
+    type: "line",
+    data: { labels, datasets: [{ data: values, borderColor: color, backgroundColor: color, borderWidth: 2,
+            pointRadius: values.length > 30 ? 0 : 3, pointHoverRadius: 5, tension: 0.25 }] },
+    options: baseOpts()
+  });
+}
+function baseOpts() {
+  return {
+    maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+    plugins: { legend: { display: false },
+      tooltip: { backgroundColor: css("--surface-1"), titleColor: css("--text-primary"), bodyColor: css("--text-secondary"),
+                 borderColor: css("--border"), borderWidth: 1, padding: 10, displayColors: false } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: css("--text-muted"), maxTicksLimit: 8 }, border: { color: css("--border") } },
+      y: { beginAtZero: false, grid: { color: css("--grid") }, ticks: { color: css("--text-muted"), maxTicksLimit: 5 }, border: { display: false } }
+    }
+  };
+}
+function emptyChart(id, msg) {
+  charts[id]?.destroy(); delete charts[id];
+  const c = document.getElementById(id), box = c.parentElement;
+  box.querySelector(".empty")?.remove();
+  c.hidden = true; box.insertAdjacentHTML("beforeend", `<div class="empty">${msg}</div>`);
+}
+function showChart(id) { const c = document.getElementById(id); c.hidden = false; c.parentElement.querySelector(".empty")?.remove(); }
+
+function render() {
+  const posts = DATA.posts.filter(p => inRange(p.created_at));
+  const acc = DATA.account_history.filter(h => inRange(h.date));
+  const tg = DATA.telegram_history.filter(h => inRange(h.date));
+
+  // KPI
+  const fol = acc.filter(h => h.followers_count != null);
+  document.getElementById("k-followers").textContent = fmt(fol.at(-1)?.followers_count);
+  if (fol.length > 1) {
+    const d = fol.at(-1).followers_count - fol[0].followers_count;
+    document.getElementById("k-followers-d").textContent = `${d >= 0 ? "+" : ""}${fmt(d)} за период`;
+  }
+  const views = posts.reduce((s, p) => s + (p.insights?.views || 0), 0);
+  const e = posts.reduce((s, p) => s + eng(p.insights || {}), 0);
+  document.getElementById("k-views").textContent = fmt(views);
+  document.getElementById("k-posts").textContent = `${posts.length} постов`;
+  document.getElementById("k-er").textContent = views ? pct(e / views) : "—";
+  document.getElementById("k-tg").textContent = fmt(posts.reduce((s, p) => s + (p.tg_joins || 0), 0));
+  document.getElementById("k-tg-total").textContent = tg.length ? `в канале сейчас ${fmt(tg.at(-1).members)}` : "бот не подключён";
+
+  // графики
+  const dLabel = d => new Date(d).toLocaleDateString("ru-RU", { day: "numeric", month: "short" });
+  if (fol.length) { showChart("c-followers"); lineChart("c-followers", fol.map(h => dLabel(h.date)), fol.map(h => h.followers_count), css("--series-1")); }
+  else emptyChart("c-followers", "Данные появятся после первого сбора метрик");
+  if (tg.length) { showChart("c-tg"); lineChart("c-tg", tg.map(h => dLabel(h.date)), tg.map(h => h.members), css("--series-3")); }
+  else emptyChart("c-tg", "Подключи бота к каналу — см. README");
+
+  const last = posts.slice(-40);
+  if (last.length) {
+    showChart("c-views"); charts["c-views"]?.destroy();
+    const o = baseOpts(); o.scales.y.beginAtZero = true; o.interaction = { mode: "nearest", intersect: true };
+    o.plugins.tooltip.callbacks = {
+      title: it => last[it[0].dataIndex].topic || RUB[last[it[0].dataIndex].rubric],
+      label: it => { const i = last[it.dataIndex].insights || {};
+        return [`Просмотры: ${fmt(i.views)}`, `Лайки: ${fmt(i.likes)} · ответы: ${fmt(i.replies)}`, `Репосты: ${fmt((i.reposts||0)+(i.quotes||0))}`,
+                last[it.dataIndex].cta ? `Пришли в TG: ${fmt(last[it.dataIndex].tg_joins)}` : "без ссылки на TG"]; }
+    };
+    charts["c-views"] = new Chart(document.getElementById("c-views"), {
+      type: "bar",
+      data: { labels: last.map(p => dLabel(p.created_at)),
+              datasets: [{ data: last.map(p => p.insights?.views || 0), backgroundColor: last.map(p => p.cta ? css("--series-2") : css("--series-1")),
+                           borderRadius: 4, borderSkipped: "start", maxBarThickness: 28 }] },
+      options: o
+    });
+  } else emptyChart("c-views", "Пока нет постов за этот период");
+
+  // рубрики
+  const byR = {};
+  for (const p of posts) { const r = byR[p.rubric] ??= { n: 0, v: 0, e: 0, tg: 0 };
+    r.n++; r.v += p.insights?.views || 0; r.e += eng(p.insights || {}); r.tg += p.tg_joins || 0; }
+  const rows = Object.entries(byR).sort((a, b) => (b[1].v ? b[1].e / b[1].v : 0) - (a[1].v ? a[1].e / a[1].v : 0));
+  document.getElementById("t-rubrics").innerHTML = `<tr><th>Рубрика</th><th class="n">Постов</th><th class="n">Ср. просмотры</th><th class="n">ER</th><th class="n">В TG</th></tr>` +
+    (rows.map(([k, r]) => `<tr><td>${esc(RUB[k] || k)}</td><td class="n">${r.n}</td><td class="n">${fmt(Math.round(r.v / r.n))}</td><td class="n">${r.v ? pct(r.e / r.v) : "—"}</td><td class="n">${fmt(r.tg)}</td></tr>`).join("")
+     || `<tr><td colspan="5" class="empty">нет данных</td></tr>`);
+
+  // часы
+  const byH = {};
+  for (const p of posts) { const h = Number(new Date(p.created_at).toLocaleString("en-GB", { hour: "2-digit", hour12: false, timeZone: TZ }));
+    const r = byH[h] ??= { n: 0, v: 0, e: 0 }; r.n++; r.v += p.insights?.views || 0; r.e += eng(p.insights || {}); }
+  const hrs = Object.entries(byH).sort((a, b) => b[1].v / b[1].n - a[1].v / a[1].n);
+  document.getElementById("t-hours").innerHTML = `<tr><th>Час</th><th class="n">Постов</th><th class="n">Ср. просмотры</th><th class="n">ER</th></tr>` +
+    (hrs.map(([h, r]) => `<tr><td>${String(h).padStart(2, "0")}:00</td><td class="n">${r.n}</td><td class="n">${fmt(Math.round(r.v / r.n))}</td><td class="n">${r.v ? pct(r.e / r.v) : "—"}</td></tr>`).join("")
+     || `<tr><td colspan="4" class="empty">нет данных</td></tr>`);
+
+  // посты
+  document.getElementById("t-posts").innerHTML = `<tr><th>Дата</th><th>Рубрика</th><th>Текст</th><th class="n">Просм.</th><th class="n">Лайки</th><th class="n">Ответы</th><th class="n">ER</th><th class="n">В TG</th></tr>` +
+    (posts.slice().reverse().map(p => { const i = p.insights || {};
+      return `<tr><td>${new Date(p.created_at).toLocaleString("ru-RU", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: TZ })}</td>
+        <td><span class="tag">${esc(RUB[p.rubric] || p.rubric)}</span></td>
+        <td class="postt">${p.permalink ? `<a href="${esc(p.permalink)}" target="_blank" rel="noopener">${esc(p.text.slice(0, 110))}…</a>` : esc(p.text.slice(0, 110))}</td>
+        <td class="n">${fmt(i.views)}</td><td class="n">${fmt(i.likes)}</td><td class="n">${fmt(i.replies)}</td>
+        <td class="n">${i.views ? pct(eng(i) / i.views) : "—"}</td><td class="n">${p.cta ? fmt(p.tg_joins) : "·"}</td></tr>`; }).join("")
+     || `<tr><td colspan="8" class="empty">нет постов</td></tr>`);
+
+  const errs = (DATA.errors || []).slice(-5).reverse();
+  document.getElementById("errors-card").hidden = !errs.length;
+  document.getElementById("t-errors").innerHTML = errs.map(e => `<tr><td class="muted">${new Date(e.at).toLocaleString("ru-RU", { timeZone: TZ })}</td><td class="err">${esc(e.msg)}</td></tr>`).join("");
+}
+
+document.getElementById("range").addEventListener("click", ev => {
+  const b = ev.target.closest("button"); if (!b) return;
+  document.querySelectorAll("#range button").forEach(x => x.classList.toggle("on", x === b));
+  days = Number(b.dataset.d); render();
+});
+
+fetch("data.json?" + Date.now()).then(r => r.json()).then(d => {
+  DATA = d;
+  document.getElementById("updated").textContent = d.updated_at
+    ? "обновлено " + new Date(d.updated_at).toLocaleString("ru-RU", { timeZone: TZ }) : "ещё не запускался";
+  render();
+}).catch(() => { document.getElementById("updated").textContent = "data.json не найден — агент ещё не запускался"; });
+</script>
+</body>
+</html>
