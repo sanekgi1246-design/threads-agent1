@@ -8,13 +8,21 @@
    "topic": "Миф о волатильности крипты",
    "text": "Биткоин — не «мыльный пузырь», а реальный актив. Цена поднялась до $80,565 (+3.7 %), а индекс страха‑жадности упал до 34 — рынок в режиме страха. Ethereum и Solana тоже выросли: $2,429.87 (+5.7 %) и $95.85 (+2.2 %). Эти цифры показывают, что волатильность — не повод списать всё как «недостоверно». 🚀 #крипто",
    "cta": null,
-   "insights": {},
-   "tg_joins": 0
+   "insights": {
+    "views": 1,
+    "likes": 0,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0
+   },
+   "tg_joins": 0,
+   "insights_at": "2026-11-04T19:38:32+00:00"
   }
  ],
  "account_history": [
   {
-   "views": 0,
+   "views": 1,
    "likes": 0,
    "replies": 0,
    "reposts": 0,
@@ -45,7 +53,11 @@
   {
    "at": "2026-11-04T16:49:33+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
+  },
+  {
+   "at": "2026-11-04T19:38:34+00:00",
+   "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-04T18:11:39+00:00"
+ "updated_at": "2026-11-04T19:38:34+00:00"
 }
