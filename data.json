@@ -37,6 +37,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-05T10:39:05+00:00"
+  },
+  {
+   "id": "17986522569089798",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfXJzUjG1Ui",
+   "created_at": "2026-11-05T13:36:15+00:00",
+   "rubric": "news_explained",
+   "topic": "Утечки данных в лёгких кошельках",
+   "text": "Ваш биткоин уже «говорит» о вас? 🕵️‍♂️\nНедавний доклад раскрывает, как лёгкие кошельки передают данные о вашем IP и привычках чужим серверам. При цене $79,598 за BTC даже небольшие утечки могут стоить дорого.\nЧто делать: перейдите на полноузловой или аппаратный кошелёк, включите Tor/VPN, не используйте один адрес постоянно.\nНе делайте: игнорировать обновления безопасности. #privacy",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -105,7 +116,11 @@
   {
    "at": "2026-11-05T10:39:06+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
+  },
+  {
+   "at": "2026-11-05T13:36:15+00:00",
+   "msg": "cta: Telegram createChatInviteLink: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-05T10:39:06+00:00"
+ "updated_at": "2026-11-05T13:36:15+00:00"
 }
