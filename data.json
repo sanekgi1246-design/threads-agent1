@@ -56,6 +56,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-05T16:41:13+00:00"
+  },
+  {
+   "id": "18197015686394926",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfXpar3Fhu6",
+   "created_at": "2026-11-05T18:12:30+00:00",
+   "rubric": "market_pulse",
+   "topic": "Краткая рыночная сводка",
+   "text": "Курсы в пятницу решили устроить небольшую распродажу 🚀\nBitcoin упал до $75,915, потеряв 5.8% за 24 ч. Ethereum скатился до $2,250.37 (-7.5%), а Solana — до $89.09 (-7.2%). Индекс страха и жадности стоит на 50 — нейтраль. Текущий откат показывает, что волатильность сегодня обычна, а настроение рынка не скатывается в панику. #криптоновости",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -138,5 +149,5 @@
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-05T16:41:14+00:00"
+ "updated_at": "2026-11-05T18:12:30+00:00"
 }
