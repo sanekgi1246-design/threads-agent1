@@ -17,7 +17,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-05T01:49:50+00:00"
+   "insights_at": "2026-11-05T04:35:11+00:00"
   }
  ],
  "account_history": [
@@ -74,7 +74,11 @@
   {
    "at": "2026-11-05T01:49:53+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
+  },
+  {
+   "at": "2026-11-05T04:35:12+00:00",
+   "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-05T01:49:53+00:00"
+ "updated_at": "2026-11-05T04:35:12+00:00"
 }
