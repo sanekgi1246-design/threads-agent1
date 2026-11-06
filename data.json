@@ -17,7 +17,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-05T22:26:12+00:00"
+   "insights_at": "2026-11-06T01:49:56+00:00"
   },
   {
    "id": "18189212614368615",
@@ -36,7 +36,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-05T22:26:12+00:00"
+   "insights_at": "2026-11-06T01:49:56+00:00"
   },
   {
    "id": "17986522569089798",
@@ -55,7 +55,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-05T22:26:12+00:00"
+   "insights_at": "2026-11-06T01:49:56+00:00"
   },
   {
    "id": "18197015686394926",
@@ -74,7 +74,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-05T22:26:13+00:00"
+   "insights_at": "2026-11-06T01:49:57+00:00"
   }
  ],
  "account_history": [
@@ -95,6 +95,15 @@
    "quotes": 0,
    "followers_count": 0,
    "date": "2026-11-05"
+  },
+  {
+   "views": 25,
+   "likes": 0,
+   "replies": 0,
+   "reposts": 0,
+   "quotes": 0,
+   "followers_count": 0,
+   "date": "2026-11-06"
   }
  ],
  "telegram_history": [],
@@ -163,7 +172,11 @@
   {
    "at": "2026-11-05T22:26:15+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
+  },
+  {
+   "at": "2026-11-06T01:49:58+00:00",
+   "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-05T22:26:15+00:00"
+ "updated_at": "2026-11-06T01:49:58+00:00"
 }
