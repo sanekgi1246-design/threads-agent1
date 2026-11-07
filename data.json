@@ -132,6 +132,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-07T07:40:29+00:00"
+  },
+  {
+   "id": "18138526330684626",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfbuTKiEZX5",
+   "created_at": "2026-11-07T08:12:08+00:00",
+   "rubric": "market_pulse",
+   "topic": "Краткая рыночная сводка",
+   "text": "Рынок просыпается от страха, а цены едва шевелятся 📈\nBitcoin держится на $76,046 (+0.8% за 24ч), Ethereum — $2,245.18 (+1.0%), Solana — $90.11 (+0.7%). Индекс страха — 25, то есть экстремальный страх. Для обычного держателя это сигнал: цены растут, несмотря на паническую атмосферу, так что лучше не паниковать, а держать курс. #криптовалюты",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -288,5 +299,5 @@
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-07T07:40:30+00:00"
+ "updated_at": "2026-11-07T08:12:08+00:00"
 }
