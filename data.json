@@ -170,6 +170,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-07T16:15:31+00:00"
+  },
+  {
+   "id": "17884283715628920",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfcxFN4Fean",
+   "created_at": "2026-11-07T17:55:40+00:00",
+   "rubric": "market_pulse",
+   "topic": "Краткий рыночный пульс",
+   "text": "😰 Биткоин едва сдвинулся вверх – $75 787 (+0,3 % за сутки), а индекс страха‑жадности упал до 25, что уже «Экстремальный страх». Ethereum тоже подрос до $2 233,79 (+0,6 %), Solana почти без движения – $89,69. Для обычного держателя это сигнал держать спокойствие и проверять безопасность кошельков. #крипто",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -334,5 +345,5 @@
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-07T16:15:33+00:00"
+ "updated_at": "2026-11-07T17:55:40+00:00"
 }
