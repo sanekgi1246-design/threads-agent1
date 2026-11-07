@@ -17,7 +17,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-07T13:30:55+00:00"
+   "insights_at": "2026-11-07T16:15:29+00:00"
   },
   {
    "id": "18189212614368615",
@@ -36,7 +36,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-07T13:30:56+00:00"
+   "insights_at": "2026-11-07T16:15:29+00:00"
   },
   {
    "id": "17986522569089798",
@@ -55,7 +55,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-07T13:30:56+00:00"
+   "insights_at": "2026-11-07T16:15:29+00:00"
   },
   {
    "id": "18197015686394926",
@@ -74,7 +74,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-07T13:30:57+00:00"
+   "insights_at": "2026-11-07T16:15:29+00:00"
   },
   {
    "id": "18023349770946653",
@@ -93,7 +93,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-07T13:30:57+00:00"
+   "insights_at": "2026-11-07T16:15:30+00:00"
   },
   {
    "id": "18086517116329508",
@@ -112,7 +112,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-07T13:30:58+00:00"
+   "insights_at": "2026-11-07T16:15:30+00:00"
   },
   {
    "id": "17960965842012316",
@@ -131,7 +131,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-07T13:30:58+00:00"
+   "insights_at": "2026-11-07T16:15:30+00:00"
   },
   {
    "id": "18138526330684626",
@@ -150,7 +150,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-07T13:30:59+00:00"
+   "insights_at": "2026-11-07T16:15:31+00:00"
   },
   {
    "id": "18126299236904788",
@@ -169,7 +169,7 @@
     "shares": 0
    },
    "tg_joins": 0,
-   "insights_at": "2026-11-07T13:31:00+00:00"
+   "insights_at": "2026-11-07T16:15:31+00:00"
   }
  ],
  "account_history": [
@@ -213,10 +213,6 @@
  "telegram_history": [],
  "tg_update_offset": 0,
  "errors": [
-  {
-   "at": "2026-11-04T16:42:32+00:00",
-   "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
-  },
   {
    "at": "2026-11-04T16:46:12+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
@@ -332,7 +328,11 @@
   {
    "at": "2026-11-07T13:31:02+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
+  },
+  {
+   "at": "2026-11-07T16:15:33+00:00",
+   "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-07T13:31:02+00:00"
+ "updated_at": "2026-11-07T16:15:33+00:00"
 }
