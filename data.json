@@ -208,6 +208,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-08T10:22:14+00:00"
+  },
+  {
+   "id": "18112125704461025",
+   "permalink": "https://www.threads.com/@dvebenen/post/Dfe1rKqkRPn",
+   "created_at": "2026-11-08T13:14:19+00:00",
+   "rubric": "basics",
+   "topic": "Газ в Ethereum",
+   "text": "Транзакция без газа? Никак! ⛽️ Представьте, что отправка ETH – это поездка на машине. Чтобы проехать, нужен бензин, а в сети – «газ». Он платит майнерам за вычисления. Чем больше машин на дороге, тем дороже бензин, так же растёт цена газа. Сейчас Ethereum стоит $2,239.83 (+0.1% за 24 ч). #crypto",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -260,10 +271,6 @@
  "telegram_history": [],
  "tg_update_offset": 0,
  "errors": [
-  {
-   "at": "2026-11-05T04:35:12+00:00",
-   "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
-  },
   {
    "at": "2026-11-05T07:54:07+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
@@ -379,7 +386,11 @@
   {
    "at": "2026-11-08T10:22:16+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
+  },
+  {
+   "at": "2026-11-08T13:14:20+00:00",
+   "msg": "cta: Telegram createChatInviteLink: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-08T10:22:16+00:00"
+ "updated_at": "2026-11-08T13:14:20+00:00"
 }
