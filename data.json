@@ -265,6 +265,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-09T10:27:57+00:00"
+  },
+  {
+   "id": "18130372375861005",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfhcWaNkbN7",
+   "created_at": "2026-11-09T13:30:44+00:00",
+   "rubric": "myth_buster",
+   "topic": "Миф о мгновенном богатстве",
+   "text": "Миф: биткоин — волшебный билет в миллион 💸\n\nНа деле цены шевелятся, а настроение рынка сейчас в страхе. Bitcoin торгуется на $74,662, упав на 1.7 % за сутки; Ethereum — $2,119, -5.4 %; Solana — $86.55, -3.3 %. Индекс страха‑жадности — 29 (Fear). #крипто",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -326,10 +337,6 @@
  "telegram_history": [],
  "tg_update_offset": 0,
  "errors": [
-  {
-   "at": "2026-11-06T04:35:05+00:00",
-   "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
-  },
   {
    "at": "2026-11-06T07:52:04+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
@@ -445,7 +452,11 @@
   {
    "at": "2026-11-09T10:27:58+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
+  },
+  {
+   "at": "2026-11-09T13:30:45+00:00",
+   "msg": "cta: Telegram createChatInviteLink: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-09T10:27:58+00:00"
+ "updated_at": "2026-11-09T13:30:45+00:00"
 }
