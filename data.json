@@ -246,6 +246,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-09T07:59:28+00:00"
+  },
+  {
+   "id": "18117436088040944",
+   "permalink": "https://www.threads.com/@dvebenen/post/Dfg7ZlZG4fu",
+   "created_at": "2026-11-09T08:42:48+00:00",
+   "rubric": "news_explained",
+   "topic": "Web3Auth спасает Keplr",
+   "text": "⚠️ Keplr под прицелом: Web3Auth вывела средства из уязвимых кошельков. При цене Bitcoin $74,185 и индексе страха 29 рынок в нервном состоянии, но паника не спасёт. Держателям: убедитесь, что используете последнюю версию Keplr, активируйте двухфакторку и храните большую часть в холодном кошельке. #security",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -428,5 +439,5 @@
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-09T07:59:29+00:00"
+ "updated_at": "2026-11-09T08:42:48+00:00"
 }
