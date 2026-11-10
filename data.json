@@ -303,6 +303,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-10T07:50:44+00:00"
+  },
+  {
+   "id": "17909855583664178",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfjegpGHHSu",
+   "created_at": "2026-11-10T08:28:05+00:00",
+   "rubric": "question",
+   "topic": "Реакция на рост BTC и падение альтов",
+   "text": "Биткоин подрос до $74 677 (+0.8 % за 24 ч), а индекс страха – 32 🤔\n\nКак вы реагируете, когда BTC растёт на +0.8 % за сутки, а Solana падает на -0.8 %? Ставите на безопасность, переключаетесь в альты или держите курс? #крипто",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -496,5 +507,5 @@
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-10T07:50:45+00:00"
+ "updated_at": "2026-11-10T08:28:05+00:00"
 }
