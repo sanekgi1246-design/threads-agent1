@@ -341,6 +341,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-10T16:28:35+00:00"
+  },
+  {
+   "id": "17999190654018549",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfkhRWwFSYZ",
+   "created_at": "2026-11-10T18:11:27+00:00",
+   "rubric": "market_pulse",
+   "topic": "Краткий рыночный пульс",
+   "text": "Рынок в режиме тормозов ⚡ За сутки Bitcoin упал до $73 245, потеряв 2 %, Ethereum — до $2 026,60, потеряв 4.6 %, а Solana срезала 5.1 % до $82,32. Индекс страха‑жадности опустился до 32, подтверждая настороженность участников. Для обычного держателя это знак держаться от новых рисков и проверять свои позиции. #крипто",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -534,5 +545,5 @@
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-10T16:28:37+00:00"
+ "updated_at": "2026-11-10T18:11:27+00:00"
 }
