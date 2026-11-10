@@ -322,6 +322,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-10T10:32:45+00:00"
+  },
+  {
+   "id": "17960368605017869",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfkBOkYm53P",
+   "created_at": "2026-11-10T13:31:27+00:00",
+   "rubric": "news_explained",
+   "topic": "Avalanche в NYSE и держатели",
+   "text": "NYSE выбрала Avalanche для расчётов по токенизированным акциям — первый крупный биржевой шаг к блокчейну. Для держателя BTC или ETH это сигнал, что сети привлекают институциональные потоки, а не мгновенный рост цены. При текущем Bitcoin $74,242 (-0.6 %) и Fear‑index 32 держите свои ключи в безопасности и следите за новостями, а не меняйте стратегии. 🚀 #crypto",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -394,10 +405,6 @@
  "telegram_history": [],
  "tg_update_offset": 0,
  "errors": [
-  {
-   "at": "2026-11-07T04:28:48+00:00",
-   "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
-  },
   {
    "at": "2026-11-07T07:40:30+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
@@ -513,7 +520,11 @@
   {
    "at": "2026-11-10T10:32:47+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
+  },
+  {
+   "at": "2026-11-10T13:31:28+00:00",
+   "msg": "cta: Telegram createChatInviteLink: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-10T10:32:47+00:00"
+ "updated_at": "2026-11-10T13:31:28+00:00"
 }
