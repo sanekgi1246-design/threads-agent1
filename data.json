@@ -379,6 +379,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-11T10:37:36+00:00"
+  },
+  {
+   "id": "18041266922891208",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfmmH8Fkfsw",
+   "created_at": "2026-11-11T13:32:21+00:00",
+   "rubric": "market_pulse",
+   "topic": "Рынок в режиме страха",
+   "text": "⚡️ Цены почти на месте, а страх держит рынок. Bitcoin чуть упал до $73,786 (‑0.1% за сутки), Ethereum — $2,053.13 (‑0.6%), а Solana поднялась до $84.17 (+0.4%). Индекс страха и жадности скатился до 29, что свидетельствует о настроении «страх». Для обычного держателя это сигнал держать позицию и не искать быстрых движений. #криптовалюта",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -461,10 +472,6 @@
  "telegram_history": [],
  "tg_update_offset": 0,
  "errors": [
-  {
-   "at": "2026-11-08T04:30:21+00:00",
-   "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
-  },
   {
    "at": "2026-11-08T07:40:50+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
@@ -580,7 +587,11 @@
   {
    "at": "2026-11-11T10:37:37+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
+  },
+  {
+   "at": "2026-11-11T13:32:22+00:00",
+   "msg": "cta: Telegram createChatInviteLink: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-11T10:37:37+00:00"
+ "updated_at": "2026-11-11T13:32:22+00:00"
 }
