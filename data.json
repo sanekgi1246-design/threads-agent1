@@ -360,6 +360,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-11T07:52:55+00:00"
+  },
+  {
+   "id": "18151045822559857",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfmDNBxlQDX",
+   "created_at": "2026-11-11T08:27:12+00:00",
+   "rubric": "question",
+   "topic": "Реакция на падения рынка",
+   "text": "⚡️Биткоин скользит к $73 822, –1.1% за сутки, Ethereum $2 060,57 (–2.4%), Solana $83,10 (–3,0%). Индекс страха — 29. Как вы действуете, когда все три монеты падают? Держите, продаёте или просто ждёте? #криптовопрос",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -563,5 +574,5 @@
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-11T07:52:57+00:00"
+ "updated_at": "2026-11-11T08:27:12+00:00"
 }
