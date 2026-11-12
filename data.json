@@ -417,6 +417,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-12T07:55:03+00:00"
+  },
+  {
+   "id": "17919417870525996",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfooxQhFgOy",
+   "created_at": "2026-11-12T08:33:56+00:00",
+   "rubric": "myth_buster",
+   "topic": "Миф о стабильных ценах",
+   "text": "Думаете, криптовалюты — это стабильные цены? 🔎 За последние 24 ч Bitcoin упал до $73 452 (-0,3 %), Ethereum — до $2 045,46 (-0,5 %), Solana — $82,77 (-0,1 %). Индекс страха и жадности — 28, значит рынок в режиме страха. Волатильность — не миф, а реальность. #криптофакты",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -630,5 +641,5 @@
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-12T07:55:06+00:00"
+ "updated_at": "2026-11-12T08:33:56+00:00"
 }
