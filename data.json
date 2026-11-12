@@ -436,6 +436,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-12T10:38:14+00:00"
+  },
+  {
+   "id": "18134665357872480",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfpMAZwFewl",
+   "created_at": "2026-11-12T13:41:50+00:00",
+   "rubric": "basics",
+   "topic": "Холодный кошелёк простыми словами",
+   "text": "🔐 Холодный кошелёк – как банковский сейф в шкафу. Вы берёте бумажную копию сид‑фразы, кладёте её в несвязанное устройство (USB‑накопитель, бумагу) и храните в надёжном месте, пока онлайн‑кошелёк остаётся пустым. Так даже если ваш телефон будет взломан, крипта останется в безопасности. Сегодня Bitcoin около $72,508, индекс страха 28.",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -528,10 +539,6 @@
  "telegram_history": [],
  "tg_update_offset": 0,
  "errors": [
-  {
-   "at": "2026-11-09T04:40:49+00:00",
-   "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
-  },
   {
    "at": "2026-11-09T07:59:29+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
@@ -647,7 +654,11 @@
   {
    "at": "2026-11-12T10:38:16+00:00",
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
+  },
+  {
+   "at": "2026-11-12T13:41:50+00:00",
+   "msg": "cta: Telegram createChatInviteLink: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-12T10:38:16+00:00"
+ "updated_at": "2026-11-12T13:41:50+00:00"
 }
