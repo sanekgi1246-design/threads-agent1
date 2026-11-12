@@ -455,6 +455,17 @@
    },
    "tg_joins": 0,
    "insights_at": "2026-11-12T16:38:46+00:00"
+  },
+  {
+   "id": "18035814587674299",
+   "permalink": "https://www.threads.com/@dvebenen/post/DfprMy7o5GN",
+   "created_at": "2026-11-12T18:14:24+00:00",
+   "rubric": "news_explained",
+   "topic": "Регуляция DeFi в ЕС",
+   "text": "⚠️ Coinbase предупреждает: DeFi в ЕС под микроскопом. При индексе страха 28 и падении Bitcoin до $71,819.00 (-3.5 %) и Ethereum до $2,014.20 (-3.5 %) держатели сталкиваются с ростом рисков. Не бросайте активы в новые DeFi‑платформы, держите их в проверенных кошельках и следите за официальными разъяснениями.",
+   "cta": null,
+   "insights": {},
+   "tg_joins": 0
   }
  ],
  "account_history": [
@@ -668,5 +679,5 @@
    "msg": "telegram: Telegram getChatMemberCount: Bad Request: chat not found"
   }
  ],
- "updated_at": "2026-11-12T16:38:48+00:00"
+ "updated_at": "2026-11-12T18:14:24+00:00"
 }
